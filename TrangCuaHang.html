@@ -32,57 +32,88 @@
 <body>
   <header class="container card mb-3" style="border: 2px solid rgb(235, 115, 167);">
     <ul class="nav nav-tabs nav-stacked row container" style="padding: 10px   10px;">
-        <li class="nav-item col-lg-3 col-sm-12 ">
-            <picture>
-                <img src="img/logo/logo.png"
-                    style="max-width: 50%; margin: 10px 10px; display: block; padding: auto; margin: auto; "
-                    alt="image desc">
-            </picture>
-        </li>
-        <li class="nav-item col-lg-6 row"
-            style="margin: 10px 0px; border: solid 1px rgb(235, 115, 167); border-radius: 20px;">
-            <a href="index.html" class="nav-link col">Trang chủ</a>
-            <a href="#" class="nav-link col">Cửa hàng</a>
-            <a href="#" class="nav-link col">Giới Thiệu</a>
-            <a href="./lienhe.html" class="nav-link col">Liên hệ</a>
-        </li>
-        <li class="nav-item disabled col-lg-3 row p-1"
-            style="margin: 10px 0px; border: 1px solid rgb(235, 115, 167); border-radius: 20px;">
+      <li class="nav-item col-lg-3 col-sm-12 ">
+        <picture>
+          <img src="img/logo/logo.png"
+            style="max-width: 50%; margin: 10px 10px; display: block; padding: auto; margin: auto; " alt="image desc">
+        </picture>
+      </li>
+      <li class="nav-item col-lg-6 row"
+        style="margin: 10px 0px; border: solid 1px rgb(235, 115, 167); border-radius: 20px;">
+        <a href="index.html" class="nav-link col">Trang chủ</a>
+        <a href="#" class="nav-link col">Cửa hàng</a>
+        <a href="#" class="nav-link col">Giới Thiệu</a>
+        <a href="./lienhe.html" class="nav-link col">Liên hệ</a>
+      </li>
+      <li class="nav-item disabled col-lg-3 row p-1"
+        style="margin: 10px 0px; border: 1px solid rgb(235, 115, 167); border-radius: 20px;">
 
-            <a href="#" id="searchIcon" class="nav-link col fa fa-search" style="display: none;"></a>
-            <div class="" id="searchBar">
-              <input type="text" name="" id="" class="form-control" placeholder="Tìm kiếm...">
-          </div>
-            <a href="dangnhap.html" class="nav-link col text-center"><i class="fa fa-user"></i></a>
-            <a href="dangki.html" class="nav-link col text-center"><i class="fa fa-user-plus"></i></a>
-            <a href="TrangQuanLySanPham.html" class="nav-link col text-center"><i class="fa fa-gears"></i></a>
-        </li>
+        <a href="#" id="searchIcon" class="nav-link col fa fa-search" style="display: none;"></a>
+        <div class="" id="searchBar">
+          <input type="text" name="" id="" class="form-control" placeholder="Tìm kiếm...">
+        </div>
+        <a href="dangnhap.html" class="nav-link col text-center"><i class="fa fa-user"></i></a>
+        <a href="dangki.html" class="nav-link col text-center"><i class="fa fa-user-plus"></i></a>
+        <a href="TrangQuanLySanPham.html" class="nav-link col text-center"><i class="fa fa-gears"></i></a>
+      </li>
     </ul>
-</header>
+  </header>
 
   <main class="container card p-2" style="border: rgb(235, 115, 167) solid 2px;">
     <div class="card">
-      <div class="card">
+      <div class="card p-2">
         <div class="card-head p-2 text-center text-white" style="background-color: rgb(235, 115, 167);">
-          <h3>SẢN PHẨM NỔI BẬT</h3>
+          <h3>DANH MỤC SẢN PHẨM</h3>
         </div>
-        <div class="card-body" style="max-height:700px;">
-          <img style="max-height:600px;; width: 100%; object-fit: cover;" class="mySlides" src="img/anhspham/banner1.jpg">
-          <img style="max-height:600px;; width: 100%; object-fit: cover;" class="mySlides" src="img/anhspham/banner2.jpg">
+        <div class="card-body mb-3 category" style="max-height:400px;">
+          <div class="row">
+            <div class="mb-5 card col-lg-3 col-md-2 col-12" style="border:rgb(235, 115, 167) solid 2px;">
+              <div class="card-head category-image mt-2 mb-2">
+                <div style="background-image: url('/img/anhspham/keptoc1.jpg'); object-fit: cover; height: 300px;;">
+                </div>
+              </div>
+              <div class="mb-2 card-body text-center text-white" style="background-color: rgb(235, 115, 167);">
+                <h3>Kẹp tóc</h3>
+              </div>
+            </div>
+            <div class="mb-5 card col-lg-3 col-md-2 col-12" style="border:rgb(235, 115, 167) solid 2px;">
+              <div class="card-head category-image mt-2 mb-2">
+                <div style="background-image: url('/img/anhspham/khuyentai5.jpg'); object-fit: cover; height: 300px;;">
+                </div>
+              </div>
+              <div class="mb-2 card-body text-center text-white" style="background-color: rgb(235, 115, 167);">
+                <h3>Khuyên tai</h3>
+              </div>
+            </div>
+            <div class="mb-5 card col-lg-3 col-md-2 col-12" style="border:rgb(235, 115, 167) solid 2px;">
+              <div class="card-head category-image mt-2 mb-2">
+                <div style="background-image: url('/img/anhspham/nhan4.jpg'); object-fit: cover; height: 300px;;"></div>
+              </div>
+              <div class="mb-2 card-body text-center text-white" style="background-color: rgb(235, 115, 167);">
+                <h3>Nhẫn</h3>
+              </div>
+            </div>
+            <div class="mb-5 card col-lg-3 col-md-2 col-12" style="border:rgb(235, 115, 167) solid 2px;">
+              <div class="card-head category-image mt-2 mb-2">
+                <div style="background-image: url('/img/anhspham/vongco2.jpg'); object-fit: cover; height: 300px;;"></div>
+              </div>
+              <div class="mb-2 card-body text-center text-white" style="background-color: rgb(235, 115, 167);">
+                <h3>Vòng cổ</h3>
+              </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card mt-2" style="border-radius: 40px;">
+        <div class="card-head p-2 text-center text-white" style="background-color: rgb(235, 115, 167);">
+          <h3>SẢN PHẨM ĐANG BÁN</h3>
+        </div>
+        <div class="card-body">
+          <div class=" row" id="sanphammoi" style="height: 1000px; overflow-y: auto;">
+
+          </div>
         </div>
       </div>
-      
-    </div>
-    <div class="card mt-2" style="border-radius: 40px;">
-      <div class="card-head p-2 text-center text-white" style="background-color: rgb(235, 115, 167);">
-        <h3>SẢN PHẨM MỚI</h3>
-      </div>
-      <div class="card-body">
-        <div class=" row" id="sanphammoi" style="height: 500px; overflow-y: auto;">
-         
-        </div>
-      </div>
-    </div>
   </main>
 
   <footer class="p-3 container card mt-4" style="border: 2px solid rgb(235, 115, 167);">
@@ -131,7 +162,7 @@
       setTimeout(carousel, 2000); // Change image every 2 seconds
     }
   </script>
-  
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/bootstrap.esm.min.js"></script>
@@ -149,16 +180,16 @@
   <script src="assets/js/bootstrap.bundle.js"></script>
   <script>
     // Lấy mảng sản phẩm từ local storage, nếu không có thì khởi tạo một mảng mới
-       const CacSanPham = JSON.parse(localStorage.getItem('CacSanPham')) || [];
+    const CacSanPham = JSON.parse(localStorage.getItem('CacSanPham')) || [];
 
     // Làm trống thẻ div
-       $('#sanphammoi').empty();
-       var i = 1;
+    $('#sanphammoi').empty();
+    var i = 1;
     //Lần lượt lấy sản phẩm ra từ mảng các sản phẩm cho tới tới sản phẩm thứ 4
-       for (const SanPham of CacSanPham) {
-         $("#sanphammoi").append(
-           `
-           <div class="card mx-auto col-lg-3 col-md-6 col-12" style="max-width: 300px; border: rgb(235, 115, 167) 2px solid;">
+    for (const SanPham of CacSanPham) {
+      $("#sanphammoi").append(
+        `
+           <div class="card m-1 col-lg-3 col-md-6 col-12" style="max-width: 300px; border: rgb(235, 115, 167) 2px solid;">
              <div class="card-head mt-2 mb-2" style=" height: 300px; object-fit: cover; background-image: url(${SanPham.Hinh});">
              
              </div>
@@ -169,14 +200,12 @@
              </div>
            </div>
            `
-         );
-         // Nếu số lượng i sản phẩm bằng 4 dừng việc lặp
-         if(i == 4){
-          break;
-         }
-         i++;
-       }
- </script>
+      );
+      // Nếu số lượng i sản phẩm bằng 4 dừng việc lặp
+     
+      i++;
+    }
+  </script>
 </body>
 
 </html>

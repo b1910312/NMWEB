@@ -1,0 +1,215 @@
+.form-wrapper {
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  background-image: url('./img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.legend{
+    text-align: center;
+    font-family: Open Sans;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+}
+.hotro{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:20px;
+}
+.dkhoan{
+    margin: 10px;
+    font-size: 18px;
+}
+.welcome
+{
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 25px;
+    animation: rainbow 2s infinite;
+}
+@keyframes rainbow {
+    0% {
+      color: red;
+    }
+    20% {
+      color: orange;
+    }
+    40% {
+      color: yellow;
+    }
+    60% {
+      color: green;
+    }
+    80% {
+      color: blue;
+    }
+    100% {
+      color: purple;
+    }
+  }
+.chuyen,.forgot
+{ 
+    background-color: #4CAF50; /* Màu nền của nút */
+    border: none; /* Không có đường viền */
+    color: white; /* Màu chữ */
+    padding: 2px 4px;
+    text-align: center; /* Căn giữa nội dung */
+    text-decoration: none; /* Không gạch chân cho nút */
+    display: inline-block; /* Hiển thị nút dưới dạng khối trên trang web */
+    font-size: 16px; /* Cỡ chữ của nội dung trong nút */
+    cursor: pointer; /* Hình dạng con trỏ khi rê chuột vào nút */
+    border-radius: 5px; /* Dùng để bo góc của nút */
+    transition-duration: 0.4s; /* Thời gian hiệu ứng khi hover */
+}
+/* Hiệu ứng khi hover chuột vào nút */
+.chuyen:hover{
+    background-color: palevioletred;
+    color: whitesmoke;
+}
+
+.forgot:hover{
+  background-color: red;
+}
+
+.gt-birth{
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.form__socials {
+    background: #f5f5f5;
+    padding: 14px 36px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.form__socials-icon {
+    font-size: 1.4rem;
+}
+
+.form__socials-facebook {
+    color: white;
+    background-color:lightskyblue;
+}
+
+.form__socials-facebook .form__socials-icon {
+    color: white;
+}
+
+.form__socials-title {
+    margin: 0 30px;
+}
+
+.form__socials-google {
+    color: red;
+    background-color:gainsboro;
+}
+
+.name-category{
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(34, 34, 34);
+  text-transform: uppercase ;
+  display: block;
+  margin-top:10px;
+}
+
+#wrapper, #wrapper0{
+max-width: 1170px;
+margin: auto;
+}
+body{
+font-family: 'Open Sans', sans-serif;
+font-size: 14px;
+line-height: 1.15;
+color: black;
+}
+h2{
+font-size: 18px;
+font-weight: 500;
+color: black;
+padding: 8px 18px;
+text-transform: uppercase;
+text-decoration: none;
+}
+.headline{
+text-align: center;
+margin: 50px 0px;
+background-color: rgba(252, 217, 223, 0.747);
+}
+ul.products, ul.category{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  ul.category li, ul.products li{
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-basis: 20%;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  ul.category li img, ul.products li img{
+    max-width: 100%;
+    height: 250px; 
+  } 
+  ul.category li img:hover{
+    filter: opacity(86%);
+  } 
+  ul.products li .product-top{
+    position: relative;
+    overflow: hidden;
+  }
+  ul.products li .product-top a.buy-now{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    background-color: rgba(118, 142, 187, 0.849);
+    color: floralwhite;
+    padding: 10px 0px;
+    position: absolute;
+    width: 100%;
+    bottom: -36px;
+    transition: 0.3s;
+  }
+  ul.products li:hover a.buy-now{
+    bottom: 0px;
+  }
+  ul.products li .product-top .product-img{
+    display: block;
+  }
+  ul.products li:hover .product-top .product-img img{
+    filter: opacity(78%) ;
+  }
+  ul.products li .product-top .product-img img{
+    display: block;
+  }
+  ul.products li .product-info a{
+    text-align: left;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+  }
+  ul.products li .product-info .product-cat{
+    font-size: 13px; 
+    color: grey;
+    text-transform: uppercase;
+    margin-top: 7px;
+  }
+  ul.products li .product-info .product-price{
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+
