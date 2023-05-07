@@ -106,11 +106,12 @@
                         <thead>
                             <tr>
                                 <th class="col-1">Stt</th>
-                                <th class="col-2">Mã sản phẩm</th>
+                                <th class="col-1">Mã sản phẩm</th>
                                 <th class="col-3">Hình</th>
                                 <th class="col-2">Tên sản phẩm</th>
                                 <th class="col-1">Số lượng</th>
                                 <th class="col-1">Giá bán (VNĐ)</th>
+                                <th class="col-1">Danh mục</th>
                                 <th class="col-2">Thao tác</th>
                             </tr>
                         </thead>
@@ -173,19 +174,38 @@
         // Lấy mảng sản phẩm từ local storage, nếu không có thì khởi tạo một mảng mới
         const CacSanPham = JSON.parse(localStorage.getItem('CacSanPham')) || [];
         var i = 1;
+        var danhmuc = "";
         // Hiển thị danh sách sản phẩm và hình ảnh trong ứng dụng
         $('#DanhSachSanPham').empty();
         for (const SanPham of CacSanPham) {
+            switch (SanPham.Danhmuc) {
+                case "1":
+                    danhmuc = "Kẹp tóc"
+                    break;
+                case "2":
+                    danhmuc = "Khuyên tai"
+                    break;
+                case "3":
+                    danhmuc = "Nhẫn"
+                    break;
+                case "4":
+                    danhmuc = "Vòng cổ"
+                    break;
+                default:
+                    danhmuc="Không có danh mục"
+                    break;
+            }
             $('#DanhSachSanPham').append(
                 `
                 <tr style="border: rgb(235, 115, 167) solid 2px;; " >
                     <td class="col-1 text-center">${i}</td>
-                    <td class="col-2">${SanPham.MaSP}</td>
+                    <td class="col-1">${SanPham.MaSP}</td>
                     <td class="col-3"><img src="${SanPham.Hinh}" alt="" class="img-responsive"
                             style="max-width: 50%;"></td>
                     <td class="col-2">${SanPham.TenSP}</td>
                     <td class="col-1">${SanPham.SL}</td>
                     <td class="col-1">${SanPham.Gia}</td>
+                    <td class="col-1">${danhmuc}</td>
                     <td class="col-2">
                         <a href="#" class="btn btn-success edit" data-bs-toggle="modal" data-bs-target="#modalId${i}"><i class="fa fa-pencil"></i></a>
                         <a href="#" class="btn btn-danger delete"><i class="fa fa-trash"></i></a>
@@ -225,6 +245,7 @@
                                                         <input type="number" class="form-control"  value="${SanPham.Gia}" name="CapNhatGia" id="CapNhatGia" aria-describedby="helpId"
                                                             placeholder="Nhập giá bán sản phẩm tại đây">
                                                     </div>
+                                                    
                                                     <div class="mb-3">
                                                         <label for="" class="form-label">Hình sản phẩm</label>
                                                         <input type="file" class="form-control"  name="CapNhatHinh" id="CapNhatHinh" placeholder=""

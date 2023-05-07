@@ -51,7 +51,7 @@
                 <a href="#" id="searchIcon" class="nav-link col fa fa-search" style="display: none;"></a>
                 <div class="" id="searchBar">
                     <input type="text" name="" id="" class="form-control" placeholder="Tìm kiếm...">
-                </div>
+                </div>              
                 <a href="dangnhap.html" class="nav-link col text-center"><i class="fa fa-user"></i></a>
                 <a href="dangki.html" class="nav-link col text-center"><i class="fa fa-user-plus"></i></a>
                 <a href="TrangQuanLySanPham.html" class="nav-link col text-center"><i class="fa fa-gears"></i></a>
@@ -170,6 +170,23 @@
             let SanPham = CacSanPham.find(x => x.MaSP === MaSP);
 
             if (SanPham) {
+                switch (SanPham.Danhmuc) {
+                    case "1":
+                        danhmuc = "Kẹp tóc"
+                        break;
+                    case "2":
+                        danhmuc = "Khuyên tai"
+                        break;
+                    case "3":
+                        danhmuc = "Nhẫn"
+                        break;
+                    case "4":
+                        danhmuc = "Vòng cổ"
+                        break;
+                    default:
+                        danhmuc="Không có danh mục"
+                        break;
+                }
                 $("#tensanpham").append(
                     `
                 <h1>${SanPham.TenSP}</h2>
@@ -191,6 +208,10 @@
                 <tr class="">
                     <th style="font-size: 20px;" class="col-4">Mã Sản phẩm</>
                     <td class="col" style="font-size: 20px;">${SanPham.MaSP}</td>
+                </tr>
+                <tr class="">
+                    <th style="font-size: 20px;" class="col-4">Danh mục</>
+                    <td class="col" style="font-size: 20px;">${danhmuc}</td>
                 </tr>
                 <tr class="">
                     <th style="font-size: 20px;" class="col-4">Giá</>

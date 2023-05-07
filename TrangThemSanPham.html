@@ -131,6 +131,17 @@
                                 placeholder="Nhập giá bán sản phẩm tại đây">
                         </div>
                         <div class="mb-3">
+                            <label for="" class="form-label text-uppercase" style="font-weight: bold;">Danh mục</label>
+                            <select class="form-select form-select-lg" name="Danhmuc" id="Danhmuc">
+                                <option selected>Chọn danhh mục</option>
+                                <option value="1">Kẹp tóc</option>
+                                <option value="2">Khuyên tai</option>
+                                <option value="3">Nhẫn</option>
+                                <option value="4">Vòng cổ</option>
+                            </select>
+
+                        </div>
+                        <div class="mb-3">
                             <label for="" class="form-label">Hình sản phẩm</label>
                             <input type="file" class="form-control" name="Hinh" id="Hinh" placeholder=""
                                 aria-describedby="fileHelpId">
@@ -199,6 +210,7 @@
             const TenSP = $('#TenSP').val();
             const SL = $('#SL').val();
             const Gia = $('#Gia').val();
+            const Danhmuc = $('#Danhmuc').val();
             const Hinh = $('#Hinh')[0].files[0];
             const reader = new FileReader();
 
@@ -209,6 +221,7 @@
                     TenSP: TenSP,
                     SL: SL,
                     Gia: Gia,
+                    Danhmuc: Danhmuc,
                     Hinh: reader.result
                 };
 
@@ -234,6 +247,7 @@
             $('#TenSP').val('');
             $('#SL').val('');
             $('#Gia').val('');
+            $('#Danhmuc').val('');
             $('#Hinh').val('');
 
         });

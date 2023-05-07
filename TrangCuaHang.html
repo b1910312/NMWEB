@@ -60,14 +60,14 @@
   </header>
 
   <main class="container card p-2" style="border: rgb(235, 115, 167) solid 2px;">
-    <div class="card">
-      <div class="card p-2">
-        <div class="card-head p-2 text-center text-white" style="background-color: rgb(235, 115, 167);">
-          <h3>DANH MỤC SẢN PHẨM</h3>
-        </div>
-        <div class="card-body mb-3 category" style="max-height:400px;">
-          <div class="row">
-            <div class="mb-5 card col-lg-3 col-md-2 col-12" style="border:rgb(235, 115, 167) solid 2px;">
+    <div class="card p-2 pb-5 mb-2">
+      <div class="card-head p-2 text-center text-white" style="background-color: rgb(235, 115, 167);">
+        <h3>DANH MỤC SẢN PHẨM <a href="#" class="btn btn-light" id="tatca" style="color:  rgb(235, 115, 167);" >Xem tất cả</a></h3>
+      </div>
+      <div class="card-body mb-3 category" style="max-height:400px;">
+        <div class="row">
+          <a href="#" id="keptoc" class="col-lg-3 col-md-2 col-12 btn">
+            <div class="mb-5 card " style="border:rgb(235, 115, 167) solid 2px;">
               <div class="card-head category-image mt-2 mb-2">
                 <div style="background-image: url('/img/anhspham/keptoc1.jpg'); object-fit: cover; height: 300px;;">
                 </div>
@@ -76,7 +76,9 @@
                 <h3>Kẹp tóc</h3>
               </div>
             </div>
-            <div class="mb-5 card col-lg-3 col-md-2 col-12" style="border:rgb(235, 115, 167) solid 2px;">
+          </a>
+          <a href="#" id="khuyentai" class="col-lg-3 col-md-2 col-12 btn">
+            <div class="mb-5 card " style="border:rgb(235, 115, 167) solid 2px;">
               <div class="card-head category-image mt-2 mb-2">
                 <div style="background-image: url('/img/anhspham/khuyentai5.jpg'); object-fit: cover; height: 300px;;">
                 </div>
@@ -85,35 +87,43 @@
                 <h3>Khuyên tai</h3>
               </div>
             </div>
-            <div class="mb-5 card col-lg-3 col-md-2 col-12" style="border:rgb(235, 115, 167) solid 2px;">
+          </a>
+          <a href="#" id="nhan" class="col-lg-3 col-md-2 col-12 btn">
+            <div class="mb-5 card " style="border:rgb(235, 115, 167) solid 2px;">
               <div class="card-head category-image mt-2 mb-2">
-                <div style="background-image: url('/img/anhspham/nhan4.jpg'); object-fit: cover; height: 300px;;"></div>
+                <div style="background-image: url('/img/anhspham/nhan4.jpg'); object-fit: cover; height: 300px;;">
+                </div>
               </div>
               <div class="mb-2 card-body text-center text-white" style="background-color: rgb(235, 115, 167);">
                 <h3>Nhẫn</h3>
               </div>
             </div>
-            <div class="mb-5 card col-lg-3 col-md-2 col-12" style="border:rgb(235, 115, 167) solid 2px;">
+          </a>
+          <a href="#" id="vongco" class="col-lg-3 col-md-2 col-12 btn">
+            <div class="mb-5 card " style="border:rgb(235, 115, 167) solid 2px;">
               <div class="card-head category-image mt-2 mb-2">
-                <div style="background-image: url('/img/anhspham/vongco2.jpg'); object-fit: cover; height: 300px;;"></div>
+                <div style="background-image: url('/img/anhspham/vongco2.jpg'); object-fit: cover; height: 300px;;">
+                </div>
               </div>
               <div class="mb-2 card-body text-center text-white" style="background-color: rgb(235, 115, 167);">
                 <h3>Vòng cổ</h3>
               </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="card mt-2" style="border-radius: 40px;">
-        <div class="card-head p-2 text-center text-white" style="background-color: rgb(235, 115, 167);">
-          <h3>SẢN PHẨM ĐANG BÁN</h3>
-        </div>
-        <div class="card-body">
-          <div class=" row" id="sanphammoi" style="height: 1000px; overflow-y: auto;">
-
-          </div>
+            </div>
+          </a>
         </div>
       </div>
+    </div>
+
+    <div class="card mt-2" style="border-radius: 40px;">
+      <div class="card-head p-2 text-center text-white" style="background-color: rgb(235, 115, 167);">
+        <h3>SẢN PHẨM ĐANG BÁN</h3>
+      </div>
+      <div class="card-body">
+        <div class=" row ms-3" id="sanphammoi" style="max-height: 1000px; overflow-y: auto;">
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <footer class="p-3 container card mt-4" style="border: 2px solid rgb(235, 115, 167);">
@@ -185,7 +195,7 @@
     // Làm trống thẻ div
     $('#sanphammoi').empty();
     var i = 1;
-    //Lần lượt lấy sản phẩm ra từ mảng các sản phẩm cho tới tới sản phẩm thứ 4
+    //Lần lượt lấy sản phẩm ra từ mảng các sản phẩm 
     for (const SanPham of CacSanPham) {
       $("#sanphammoi").append(
         `
@@ -201,10 +211,141 @@
            </div>
            `
       );
-      // Nếu số lượng i sản phẩm bằng 4 dừng việc lặp
-     
-      i++;
+   
     }
+
+    $('#keptoc').on('click', function () {
+      // lấy dữ liệu từ localstore và chuyển sang json
+      let CacSanPham = JSON.parse(localStorage.getItem('CacSanPham'));
+
+      // Lọc dữ liệu với jq và định dạng lại kết quả theo JSON
+      let Sanphamloc = CacSanPham.filter(function (CSP) {
+        return CSP.Danhmuc == 1;
+      });
+
+      $('#sanphammoi').empty();
+      for (const SanPham of Sanphamloc) {
+        $("#sanphammoi").append(
+          `
+           <div class="card m-1 col-lg-3 col-md-6 col-12" style="max-width: 300px; height: fit-content; border: rgb(235, 115, 167) 2px solid;">
+             <div class="card-head mt-2 mb-2" style=" height: 300px; object-fit: cover; background-image: url(${SanPham.Hinh});">
+             
+             </div>
+             <div class="card-body mb-2 text-center text-white " style="max-height: 30%; background-color: rgb(235, 115, 167); ">
+               <h3>${SanPham.TenSP}</h3>
+               <p>Giá: ${SanPham.Gia} VNĐ</p>
+               <a href="./TrangChiTiet.html?MaSP=${SanPham.MaSP}" class="btn btn-light">Xem chi tiết</a>
+             </div>
+           </div>
+           `
+        );
+      }
+    });
+
+    $('#khuyentai').on('click', function () {
+      // lấy dữ liệu từ localstore và chuyển sang json
+      let CacSanPham = JSON.parse(localStorage.getItem('CacSanPham'));
+
+      // Lọc dữ liệu với jq và định dạng lại kết quả theo JSON
+      let Sanphamloc = CacSanPham.filter(function (CSP) {
+        return CSP.Danhmuc == 2;
+      });
+
+      $('#sanphammoi').empty();
+      for (const SanPham of Sanphamloc) {
+        $("#sanphammoi").append(
+          `
+           <div class="card m-1 col-lg-3 col-md-6 col-12" style="max-width: 300px; height: fit-content; border: rgb(235, 115, 167) 2px solid;">
+             <div class="card-head mt-2 mb-2" style=" height: 300px; object-fit: cover; background-image: url(${SanPham.Hinh});">
+             
+             </div>
+             <div class="card-body mb-2 text-center text-white " style="max-height: 30%; background-color: rgb(235, 115, 167); ">
+               <h3>${SanPham.TenSP}</h3>
+               <p>Giá: ${SanPham.Gia} VNĐ</p>
+               <a href="./TrangChiTiet.html?MaSP=${SanPham.MaSP}" class="btn btn-light">Xem chi tiết</a>
+             </div>
+           </div>
+           `
+        );
+      }
+    });
+    $('#nhan').on('click', function () {
+      // lấy dữ liệu từ localstore và chuyển sang json
+      let CacSanPham = JSON.parse(localStorage.getItem('CacSanPham'));
+
+      // Lọc dữ liệu với jq và định dạng lại kết quả theo JSON
+      let Sanphamloc = CacSanPham.filter(function (CSP) {
+        return CSP.Danhmuc == 3;
+      });
+
+      $('#sanphammoi').empty();
+      for (const SanPham of Sanphamloc) {
+        $("#sanphammoi").append(
+          `
+           <div class="card m-1 col-lg-3 col-md-6 col-12" style="max-width: 300px; height: fit-content; border: rgb(235, 115, 167) 2px solid;">
+             <div class="card-head mt-2 mb-2" style=" height: 300px; object-fit: cover; background-image: url(${SanPham.Hinh});">
+             
+             </div>
+             <div class="card-body mb-2 text-center text-white " style="max-height: 30%; background-color: rgb(235, 115, 167); ">
+               <h3>${SanPham.TenSP}</h3>
+               <p>Giá: ${SanPham.Gia} VNĐ</p>
+               <a href="./TrangChiTiet.html?MaSP=${SanPham.MaSP}" class="btn btn-light">Xem chi tiết</a>
+             </div>
+           </div>
+           `
+        );
+      }
+    });
+    $('#vongco').on('click', function () {
+      // lấy dữ liệu từ localstore và chuyển sang json
+      let CacSanPham = JSON.parse(localStorage.getItem('CacSanPham'));
+
+      // Lọc dữ liệu với jq và định dạng lại kết quả theo JSON
+      let Sanphamloc = CacSanPham.filter(function (CSP) {
+        return CSP.Danhmuc == 4;
+      });
+
+      $('#sanphammoi').empty();
+      for (const SanPham of Sanphamloc) {
+        $("#sanphammoi").append(
+          `
+           <div class="card m-1 col-lg-3 col-md-6 col-12" style="max-width: 300px; height: fit-content; border: rgb(235, 115, 167) 2px solid;">
+             <div class="card-head mt-2 mb-2" style=" height: 300px; object-fit: cover; background-image: url(${SanPham.Hinh});">
+             
+             </div>
+             <div class="card-body mb-2 text-center text-white " style="max-height: 30%; background-color: rgb(235, 115, 167); ">
+               <h3>${SanPham.TenSP}</h3>
+               <p>Giá: ${SanPham.Gia} VNĐ</p>
+               <a href="./TrangChiTiet.html?MaSP=${SanPham.MaSP}" class="btn btn-light">Xem chi tiết</a>
+             </div>
+           </div>
+           `
+        );
+      }
+    });
+    $('#tatca').on('click', function () {
+      // lấy dữ liệu từ localstore và chuyển sang json
+      let CacSanPham = JSON.parse(localStorage.getItem('CacSanPham'));
+
+
+      $('#sanphammoi').empty();
+      for (const SanPham of CacSanPham) {
+        $("#sanphammoi").append(
+          `
+           <div class="card m-1 col-lg-3 col-md-6 col-12" style="max-width: 300px; height: fit-content; border: rgb(235, 115, 167) 2px solid;">
+             <div class="card-head mt-2 mb-2" style=" height: 300px; object-fit: cover; background-image: url(${SanPham.Hinh});">
+             
+             </div>
+             <div class="card-body mb-2 text-center text-white " style="max-height: 30%; background-color: rgb(235, 115, 167); ">
+               <h3>${SanPham.TenSP}</h3>
+               <p>Giá: ${SanPham.Gia} VNĐ</p>
+               <a href="./TrangChiTiet.html?MaSP=${SanPham.MaSP}" class="btn btn-light">Xem chi tiết</a>
+             </div>
+           </div>
+           `
+        );
+      }
+    });
   </script>
 </body>
 
